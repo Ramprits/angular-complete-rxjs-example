@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './products/new-product/new-product.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot([
-    { path: '', component: ProductsComponent }
+    { path: '', component: ProductsComponent },
+    { path: 'users', component: UserComponent },
   ])],
-  declarations: [AppComponent, NavbarComponent, ProductsComponent, NewProductComponent],
+  declarations: [AppComponent, NavbarComponent, ProductsComponent, NewProductComponent, UserComponent],
   bootstrap: [AppComponent],
   providers: []
 })

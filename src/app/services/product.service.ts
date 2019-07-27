@@ -7,10 +7,18 @@ import { map, combineLatest, catchError } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ProductService {
+  userUrl = "https://jsonplaceholder.typicode.com/users";
 
   constructor(private http: HttpClient) { }
+
+  users$ = this.http.get<any[]>(`${this.userUrl}`).pipe(
+    catchError(this.handleError)
+  )
+
+
+
   getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`https://jsonplaceholder.typicode.com/users`).pipe(
+    return this.http.get<any[]>(`${this.userUrl}`).pipe(
       catchError(this.handleError)
     )
   }
