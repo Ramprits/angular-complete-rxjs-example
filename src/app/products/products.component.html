@@ -1,5 +1,5 @@
 <div class="columns is-multiline">
-	<ng-container *ngIf="products$ |async as products">
+	<ng-container *ngIf="products$ |async as products;else errorTmp">
 		<div class="column is-4" *ngFor="let p of products">
 			<div class="card">
 				<div class="card-content">
@@ -18,5 +18,10 @@
 </div>
 		</div>
 	</ng-container>
+
+  <ng-template #errorTmp>
+    {{errorMessage}} <br/>
+    Please contact to admin.
+  </ng-template>
 
 </div>

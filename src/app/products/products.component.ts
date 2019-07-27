@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.products$ = this.productService.getUsers().pipe(
       catchError(err => {
-        this.errorMessage = err;
+        this.errorMessage = err.message;
         return EMPTY;
       })
     );

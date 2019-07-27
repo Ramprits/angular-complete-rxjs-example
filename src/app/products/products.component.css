@@ -1,4 +1,7 @@
-address { 
-  display: block;
-  font-style: italic;
+.card:hover{
+  background-color: antiquewhite;
+  -webkit-transition: width 1s; /* Safari prior 6.1 */
+  transition: all 1s;
+  padding:1px;
+  margin:1px;
 }
