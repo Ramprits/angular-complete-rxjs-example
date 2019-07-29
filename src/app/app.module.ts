@@ -13,6 +13,10 @@ import { UserComponent } from './user/user.component';
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot([
     { path: '', component: ProductsComponent },
     { path: 'users', component: UserComponent },
+    {
+      path: 'auth',
+      loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
+    },
   ])],
   declarations: [AppComponent, NavbarComponent, ProductsComponent, NewProductComponent, UserComponent],
   bootstrap: [AppComponent],
